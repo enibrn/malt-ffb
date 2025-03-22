@@ -1,0 +1,11 @@
+{
+  "name": "malt-ffb",
+  "version": "1.0.0",
+    "main": "dist/index.js",
+    "scripts": {
+        "test": "bun test"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/"
+    }
+}
