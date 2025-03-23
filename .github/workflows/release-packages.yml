@@ -14,15 +14,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: oven-sh/setup-bun@v2 # Setup bun environment
+      # Installa Bun
+      - uses: oven-sh/setup-bun@v2 
       - run: bun install
       - run: bun run ci
 
-      - uses: actions/setup-node@v4 # Setup node environment
-        with:
-          node-version: '20.x'
-          registry-url: 'https://npm.pkg.github.com'
-          scope: "@enibrn"
-      - run: npm publish
+      # Configura l'autenticazione per GitHub Packages
+      - name: Configura .npmrc per GitHub Packages
+        run: |
+          echo "@enibrn:registry=https://npm.pkg.github.com" > .npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> .npmrc
+      
+      # Pubblica con Bun
+      - run: bun publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
