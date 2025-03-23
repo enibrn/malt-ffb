@@ -1,6 +1,6 @@
 {
-  "name": "malt-ffb",
-  "version": "0.1.0",
+    "name": "malt-ffb",
+    "version": "0.1.0",
     "main": "dist/index.js",
     "scripts": {
         "clean": "rm -rf dist",
@@ -10,5 +10,8 @@
     "repository": {
         "type": "git",
         "url": "git+https://github.com/enibrn/malt-ffb.git"
-    }
+    },
+    "files": [
+        "dist"
+    ]
 }
