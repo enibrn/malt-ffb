@@ -19,7 +19,7 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: "@enibrn"
       - run: bun install
-      - run: bun ci
+      - run: bun run ci
       - name: Publish
         run: bun publish
         env:
