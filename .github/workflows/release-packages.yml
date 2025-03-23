@@ -1,0 +1,26 @@
+name: Release Package
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          registry-url: https://npm.pkg.github.com/
+          scope: "@enibrn"
+      - run: bun install
+      - run: bun ci
+      - name: Publish
+        run: bun publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

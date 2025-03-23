@@ -3,9 +3,15 @@
   "version": "1.0.0",
     "main": "dist/index.js",
     "scripts": {
-        "test": "bun test"
+        "test": "bun test",
+        "clean": "rm -rf dist",
+        "build": "bun run clean && tsc"
     },
     "publishConfig": {
         "registry": "https://npm.pkg.github.com/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/enibrn/malt-ffb"
     }
 }
