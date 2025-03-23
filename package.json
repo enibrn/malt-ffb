@@ -1,5 +1,5 @@
 {
-    "name": "malt-ffb",
+    "name": "@enibrn/malt-ffb",
     "version": "0.1.0",
     "main": "dist/index.js",
     "publishConfig": {
