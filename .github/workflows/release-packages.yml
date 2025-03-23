@@ -20,7 +20,8 @@ jobs:
           scope: "@enibrn"
       - run: bun install
       - run: bun run ci
-      - name: Publish
-        run: bun publish
+      - run: bunx npm login --registry=https://npm.pkg.github.com/ --scope=@enibrn --always-auth
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish
+        run: bun publish
