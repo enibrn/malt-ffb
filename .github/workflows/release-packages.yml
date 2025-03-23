@@ -17,11 +17,12 @@ jobs:
       - uses: actions/setup-node@v4 # Set up Node.js just for the npm publish step
         with:
           node-version: '20.x'
-          registry-url: https://npm.pkg.github.com/
+          registry-url: 'https://npm.pkg.github.com'
           scope: "@enibrn"
 
       - run: bun install
       - run: bun run ci
       - run: npm publish
+        working-directory: dist
         env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
