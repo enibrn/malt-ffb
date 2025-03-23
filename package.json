@@ -7,11 +7,8 @@
         "build": "bun run clean && tsc",
         "ci": "bun test && bun run build"
     },
-    "publishConfig": {
-        "registry": "https://npm.pkg.github.com/"
-    },
     "repository": {
         "type": "git",
-        "url": "https://github.com/enibrn/malt-ffb"
+        "url": "git+https://github.com/enibrn/malt-ffb.git"
     }
 }
