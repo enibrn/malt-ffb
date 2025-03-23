@@ -2,6 +2,9 @@
     "name": "malt-ffb",
     "version": "0.1.0",
     "main": "dist/index.js",
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/"
+    },
     "scripts": {
         "clean": "rm -rf dist",
         "build": "bun run clean && tsc",
