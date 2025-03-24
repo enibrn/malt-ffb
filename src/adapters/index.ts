@@ -1,0 +1,1 @@
+//Factory per la creazione degli adapter
